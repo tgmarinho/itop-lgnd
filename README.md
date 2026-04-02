@@ -86,6 +86,34 @@ It was designed and built for [Legendários](https://www.legendariosms.com/) eve
 
 ---
 
+## 📸 Screenshots
+
+### Dashboard — General Overview
+![Dashboard - Event Status Overview](./screenshot/5-dashboard-visao-geral-do-evento-status.png)
+
+### Dashboard — Financial
+![Dashboard - Financial](./screenshot/6-dashboard-financeiro.png)
+
+### Public Event Page
+![Public Event Page](./screenshot/9-pagina-publicada-do-evento-com-mais-info.png)
+
+### Event Editor
+![Event Editor](./screenshot/12-edicao-do-evento.png)
+
+### Registrations List — Filters & Search
+![Registrations List](./screenshot/16-lista-inscritos-filtros-search-infos.png)
+
+### Check-In — Manual & QR Code
+![Check-In Page](./screenshot/17-pagina-de-checkin-manual-qrcode.png)
+
+### Discount Coupons
+![Discount Coupons](./screenshot/18-criacao-listagem-cupom-de-desconto-para-evento.png)
+
+### Secret Registration Links
+![Secret Links](./screenshot/19-link-secreto-para-formulario-inscricao.png)
+
+---
+
 ## 🛠 Tech Stack
 
 | Layer | Technology |
@@ -341,6 +369,34 @@ Projetado e desenvolvido para os eventos [Legendários](https://www.legendariosm
 - **Importação/exportação CSV**: operações em massa de dados
 - **Upload de arquivos**: banners dos eventos via [Uploadthing](https://uploadthing.com/)
 - **Jobs em background**: processamento assíncrono com [Inngest](https://inngest.com/)
+
+---
+
+## 📸 Screenshots
+
+### Dashboard — Visão Geral do Evento
+![Dashboard - Visão Geral e Status](./screenshot/5-dashboard-visao-geral-do-evento-status.png)
+
+### Dashboard — Financeiro
+![Dashboard - Financeiro](./screenshot/6-dashboard-financeiro.png)
+
+### Página Pública do Evento
+![Página Publicada do Evento](./screenshot/9-pagina-publicada-do-evento-com-mais-info.png)
+
+### Edição do Evento
+![Edição do Evento](./screenshot/12-edicao-do-evento.png)
+
+### Lista de Inscritos — Filtros e Busca
+![Lista de Inscritos](./screenshot/16-lista-inscritos-filtros-search-infos.png)
+
+### Check-In — Manual e QR Code
+![Página de Check-In](./screenshot/17-pagina-de-checkin-manual-qrcode.png)
+
+### Cupons de Desconto
+![Criação e Listagem de Cupons](./screenshot/18-criacao-listagem-cupom-de-desconto-para-evento.png)
+
+### Links Secretos para Inscrição
+![Links Secretos](./screenshot/19-link-secreto-para-formulario-inscricao.png)
 
 ---
 
