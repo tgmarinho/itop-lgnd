@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Section } from "@/components/ui/section";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -524,9 +524,80 @@ const enCopy: Copy = {
   ],
 };
 
+function ChapterSidebar({
+  chapters,
+  label,
+}: {
+  chapters: Chapter[];
+  label: string;
+}) {
+  const [activeId, setActiveId] = useState<string>(chapters[0]?.id ?? "");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible[0]) setActiveId(visible[0].target.id);
+      },
+      { rootMargin: "-30% 0px -60% 0px", threshold: 0 },
+    );
+    chapters.forEach((c) => {
+      const el = document.getElementById(c.id);
+      if (el) observer.observe(el);
+    });
+    return () => observer.disconnect();
+  }, [chapters]);
+
+  return (
+    <aside className="sticky top-28 hidden h-fit lg:block">
+      <p className="mb-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+        {label}
+      </p>
+      <ol className="flex flex-col gap-1 border-l border-border">
+        {chapters.map((c) => {
+          const active = activeId === c.id;
+          return (
+            <li key={c.id} className="relative">
+              <a
+                href={`#${c.id}`}
+                className={
+                  "group flex gap-3 py-1.5 pl-4 text-sm transition " +
+                  (active
+                    ? "text-foreground"
+                    : "text-muted-foreground hover:text-foreground")
+                }
+              >
+                <span
+                  aria-hidden
+                  className={
+                    "absolute -left-px top-0 h-full w-px transition " +
+                    (active ? "bg-primary" : "bg-transparent")
+                  }
+                />
+                <span
+                  className={
+                    "font-mono text-xs " +
+                    (active ? "text-primary" : "text-muted-foreground/60")
+                  }
+                >
+                  {c.number}
+                </span>
+                <span className="leading-snug">{c.title}</span>
+              </a>
+            </li>
+          );
+        })}
+      </ol>
+    </aside>
+  );
+}
+
 export default function DemoPage() {
   const [lang, setLang] = useState<Lang>("pt");
   const t = lang === "pt" ? ptCopy : enCopy;
+  const sidebarLabel = lang === "pt" ? "Sumário" : "Contents";
 
   return (
     <div className="relative flex flex-col gap-16 pb-24 pt-28">
@@ -603,11 +674,14 @@ export default function DemoPage() {
 
       <Separator className="mx-auto max-w-screen-xl" />
 
+      <Section className="lg:grid lg:grid-cols-[220px_1fr] lg:gap-12">
+        <ChapterSidebar chapters={t.chapters} label={sidebarLabel} />
+        <div className="flex flex-col gap-16">
       {t.chapters.map((chapter) => (
-        <Section
+        <section
           key={chapter.id}
           id={chapter.id}
-          className="flex scroll-mt-24 flex-col gap-6"
+          className="flex scroll-mt-28 flex-col gap-6"
         >
           <div className="flex flex-col gap-2">
             <div className="flex items-center gap-3 text-sm text-muted-foreground">
@@ -678,8 +752,10 @@ export default function DemoPage() {
               </figure>
             ))}
           </div>
-        </Section>
+        </section>
       ))}
+        </div>
+      </Section>
 
       <Separator className="mx-auto max-w-screen-xl" />
 
