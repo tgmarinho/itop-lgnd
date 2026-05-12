@@ -73,6 +73,13 @@ export const SignIn = ({ className }: SignInProps) => {
         </CardDescription>
       </CardHeader>
       <CardContent className="sm:p-0">
+        <div className="mb-4 rounded-md border border-primary/40 bg-primary/5 p-3 text-xs text-muted-foreground">
+          Só quer conhecer o sistema?{" "}
+          <a href="/demo" className="text-primary underline">
+            Veja o tour interativo
+          </a>{" "}
+          sem precisar de cadastro.
+        </div>
         <FormProvider {...createForm}>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="mt-6 flex flex-col gap-6">

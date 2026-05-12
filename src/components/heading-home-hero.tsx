@@ -27,11 +27,16 @@ export const HeadingHomeHero = ({ className }: { className?: string }) => {
 
       <h2 className="font-semibold sm:text-xl">{ITOP.description}</h2>
 
-      {ability.can("read", "Organization") && (
-        <Button size="lg" className="mt-6">
-          <Link href={orgsRoutes.dashboard}>Administrar Evento</Link>
+      <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+        {ability.can("read", "Organization") && (
+          <Button size="lg">
+            <Link href={orgsRoutes.dashboard}>Administrar Evento</Link>
+          </Button>
+        )}
+        <Button size="lg" variant="outline">
+          <Link href="/demo">Ver demonstração</Link>
         </Button>
-      )}
+      </div>
     </div>
   );
 };

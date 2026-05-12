@@ -18,6 +18,14 @@ from registration and payments to check-in and analytics.**
 
 ---
 
+## 🎬 Live Demo
+
+Want to explore the system without registering? Visit the **interactive tour** at [`/demo`](http://localhost:3000/demo) — a guided walkthrough across 7 chapters (Discovery, Public Event Page, Org & Events, Editor, Dashboards, Operations, Team & Permissions) using real screenshots and engineering notes.
+
+> The `/demo` route is fully public — no login, database, or backend services required to view it.
+
+---
+
 ## 📌 Overview
 
 **iTOP** (*Inscrições TOP*) is a production-grade, multi-tenant SaaS built to manage the full lifecycle of large events — from online registration and multi-method payment processing, to on-site check-in, real-time dashboards, and automated notifications.
@@ -301,6 +309,14 @@ Built with ❤️ by <a href="https://github.com/tgmarinho">@tgmarinho</a>
 do cadastro e pagamento ao check-in e analytics.**
 
 </div>
+
+---
+
+## 🎬 Demonstração ao Vivo
+
+Quer conhecer o sistema sem precisar de cadastro? Acesse o **tour interativo** em [`/demo`](http://localhost:3000/demo) — um passeio guiado em 7 capítulos (Descoberta, Página Pública, Organização & Eventos, Edição, Dashboards, Operação, Time & Permissões) com screenshots reais e notas de engenharia.
+
+> A rota `/demo` é totalmente pública — não exige login, banco de dados nem serviços de backend para ser visualizada.
 
 ---
 
