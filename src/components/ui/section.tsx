@@ -4,11 +4,15 @@ import React from "react";
 type SectionProps = {
   children: React.ReactNode;
   className?: string;
+  id?: string;
 };
 
-export const Section = ({ children, className }: SectionProps) => {
+export const Section = ({ children, className, id }: SectionProps) => {
   return (
-    <section className={cn("mx-auto w-full max-w-screen-xl px-4", className)}>
+    <section
+      id={id}
+      className={cn("mx-auto w-full max-w-screen-xl px-4", className)}
+    >
       {children}
     </section>
   );
